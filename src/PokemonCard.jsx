@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 function PokemonCard({ name, img }) {
   //prettier-ignore
   return (
@@ -11,5 +12,4 @@ export default PokemonCard;
 
 PokemonCard.propTypes = {
   name: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
 };
