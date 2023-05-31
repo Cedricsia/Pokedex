@@ -1,20 +1,12 @@
 function PokemonCard() {
   const pokemon = pokemonList[0];
-  if (pokemon.imgSrc === undefined) {
-    return (
-      <figure>
-        <p>????</p>
-        <figcaption>{pokemon.name}</figcaption>
-      </figure>
-    );
-  } else {
-    return (
-      <figure>
-        <img src={pokemon.imgSrc} alt={pokemon.name} s />
-        <figcaption>{pokemon.name}</figcaption>
-      </figure>
-    );
-  }
+  //prettier-ignore
+  return (
+    <figure>
+      {pokemon.imgSrc === undefined ?<p>???</p> :<img src={pokemon.imgSrc} alt={pokemon.name} />}
+      <figcaption>{pokemon.name}</figcaption>
+    </figure>
+  );
 }
 
 const pokemonList = [
