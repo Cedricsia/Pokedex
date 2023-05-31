@@ -1,11 +1,15 @@
-function PokemonCard(props) {
-  const pokemon = props.pokemon;
+function PokemonCard({ name, img }) {
   //prettier-ignore
   return (
-    <figure>
-      {pokemon.imgSrc === undefined ? <p>???</p> : <img src={pokemon.imgSrc} alt={pokemon.name} />}
-      <figcaption>{pokemon.name}</figcaption>
-    </figure>
-  );
+      <figure>
+        {img === undefined ? <p>???</p> : <img src={img} alt={name} />}
+        <figcaption>{name}</figcaption>
+      </figure>
+    );
 }
 export default PokemonCard;
+
+PokemonCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
