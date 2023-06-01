@@ -1,8 +1,8 @@
 import "./PokemonCard";
 import "./App.css";
 import PokemonCard from "./PokemonCard";
-import { useState } from "react";
-import NavBar from "./navbar";
+import NavBar from "./Navbar";
+import { useEffect, useState } from "react";
 
 const pokemonList = [
   {
@@ -31,6 +31,10 @@ const pokemonList = [
 ];
 
 function App() {
+  //prettier-ignore
+  useEffect(() => {
+    alert("hello pokemon trainer !");
+  }, []);
   const [pokemonIndex, setPokemonIndex] = useState(0);
   const clickNext = () => {
     setPokemonIndex(pokemonIndex + 1);
@@ -43,7 +47,7 @@ function App() {
     // prettier-ignore
     <div>
       <PokemonCard name={pokemon.name} img={pokemon.imgSrc} />
-      <NavBar pokemonIndex={pokemonIndex} clickNext={clickNext} clickPrev={clickPrev} />
+      <NavBar pokemonIndex={pokemonIndex} clickNext={clickNext} clickPrev={clickPrev}  pokemon={pokemon}/>
     </div>
   );
 }

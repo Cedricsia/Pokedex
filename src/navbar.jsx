@@ -1,4 +1,8 @@
-function NavBar({ pokemonIndex, clickNext, clickPrev }) {
+function NavBar({ pokemonIndex, clickNext, clickPrev, pokemon }) {
+  //prettier-ignore
+  if (pokemon && pokemon.name === "pikachu") {
+    alert("pika pikachu !!!");
+  }
   return (
     <div id="Navbar">
       {pokemonIndex > 0 && <button onClick={clickPrev}>Pécédent</button>}
