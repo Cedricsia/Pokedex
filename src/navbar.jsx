@@ -1,6 +1,6 @@
 function NavBar({ pokemonIndex, clickNext, clickPrev, pokemon }) {
   //prettier-ignore
-  if (pokemon && pokemon.name === "pikachu") {
+  if ( pokemon.name === "pikachu") {
     alert("pika pikachu !!!");
   }
   return (
