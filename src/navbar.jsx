@@ -1,8 +1,12 @@
-function NavBar({ pokemonIndex, clickNext, clickPrev }) {
+import { useState } from "react";
+function NavBar({ pokemonList, setPokemonIndex }) {
   return (
     <div id="Navbar">
-      {pokemonIndex > 0 && <button onClick={clickPrev}>Pécédent</button>}
-      {pokemonIndex < 4 && <button onClick={clickNext}>Suivant</button>}
+      {pokemonList.map((pokemon, index) => (
+        <button onClick={() => setPokemonIndex(index)}>{pokemon.name}</button>
+      ))}
+      {/* {pokemonIndex > 0 && <button onClick={clickPrev}>Pécédent</button>}
+      {pokemonIndex < 4 && <button onClick={clickNext}>Suivant</button>} */}
     </div>
   );
 }

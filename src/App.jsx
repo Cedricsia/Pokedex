@@ -32,18 +32,12 @@ const pokemonList = [
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const clickNext = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
-  const clickPrev = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
   const pokemon = pokemonList[pokemonIndex];
   return (
     // prettier-ignore
     <div>
       <PokemonCard name={pokemon.name} img={pokemon.imgSrc} />
-      <NavBar pokemonIndex={pokemonIndex} clickNext={clickNext} clickPrev={clickPrev} />
+      <NavBar pokemonIndex={pokemonIndex}  pokemonList={pokemonList} setPokemonIndex={setPokemonIndex}  />
     </div>
   );
 }
